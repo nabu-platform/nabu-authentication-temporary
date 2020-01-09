@@ -1,0 +1,7 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.authentication.temporary.types.database.temporaryAuthentication</outputDefinition>
+	<sql>select *
+from ~temporary_authentications ta
+where id = :id and secret = :secret
+for update</sql>
+</jdbcService>

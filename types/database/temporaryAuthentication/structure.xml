@@ -1,0 +1,9 @@
+<structure collectionName="temporaryAuthentications" name="authentication">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field name="alias" type="java.lang.String"/>
+    <field name="realm" type="java.lang.String"/>
+    <field name="secret" type="java.lang.String"/>
+    <field comment="Max amount of times this code can be used (this is best effort)" minOccurs="0" name="maxUses" type="java.lang.Long"/>
+    <field comment="How many times it has already been used" name="used" type="java.lang.Long"/>
+    <field comment="Until when this code can be used" minOccurs="0" name="until" timezone="UTC" type="java.util.Date"/>
+</structure>

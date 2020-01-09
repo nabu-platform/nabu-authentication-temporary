@@ -1,0 +1,3 @@
+<structure comment="Configure the settings for temporary configuration" name="temporaryAuthenticator">
+    <field minOccurs="0" name="connectionId" type="java.lang.String"/>
+</structure>

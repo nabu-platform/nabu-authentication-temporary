@@ -1,0 +1,6 @@
+<structure interface="be.nabu.eai.module.web.application.api.TemporaryAuthenticator.authenticate" name="pipeline">
+    <structure name="input">
+        <structure comment="Configure the settings for temporary configuration" definition="nabu.authentication.temporary.providers.configuration" name="configuration"/>
+    </structure>
+    <structure name="output"/>
+</structure>

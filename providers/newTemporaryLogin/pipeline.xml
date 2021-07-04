@@ -1,0 +1,8 @@
+<structure interface="be.nabu.eai.module.web.application.api.TemporaryAuthenticationGenerator.generate" name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <structure comment="Configure the settings for temporary configuration" definition="nabu.authentication.temporary.providers.configuration" minOccurs="0" name="configuration"/>
+    </structure>
+    <structure name="output"/>
+    <structure collectionName="temporaryAuthentications" definition="nabu.authentication.temporary.types.database.temporaryAuthentication" name="temporary"/>
+</structure>

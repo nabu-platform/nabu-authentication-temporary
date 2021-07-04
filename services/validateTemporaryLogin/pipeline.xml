@@ -3,11 +3,13 @@
         <field minOccurs="0" name="connectionId" type="java.lang.String"/>
         <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
         <field name="secret" type="java.lang.String"/>
+        <field name="type" type="java.lang.String"/>
     </structure>
     <structure name="output">
         <field name="alias" type="java.lang.String"/>
         <field name="realm" type="java.lang.String"/>
+        <field minOccurs="0" name="authenticationId" type="java.lang.String"/>
     </structure>
     <structure collectionName="temporaryAuthentications" definition="nabu.authentication.temporary.types.database.temporaryAuthentication" minOccurs="0" name="temporary"/>
-    <field minOccurs="0" name="now" type="java.util.Date"/>
+    <field name="valid" type="java.lang.Boolean"/>
 </structure>

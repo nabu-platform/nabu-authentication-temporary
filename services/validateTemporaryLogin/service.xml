@@ -14,8 +14,9 @@
 				temporaryMapping="true"
 				x="30"
 				y="30"
-				invocationOrder="0"
-				asynchronous="false">
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="073d4d7f-0d49-407d-aa7e-e507e863dc35"
@@ -24,15 +25,6 @@
 					fixedValue="false">
 				<from>input/id</from>
 				<to>parameters/id</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="8d8f5f9f-2925-433f-a38c-a7b7de35048b"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>input/secret</from>
-				<to>parameters/secret</to>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
@@ -52,6 +44,24 @@
 				<from>transactionId</from>
 				<to>transaction</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9a6441cc-34d7-44b3-8985-3cfbcbca0529"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultc623932e56a7498d97eb57ca0de05905/date</from>
+				<to>parameters/now</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="a6d956ea-4f0d-4a6e-a905-dd955044ea95"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/type</from>
+				<to>parameters/type</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -68,62 +78,120 @@
 				serviceId="nabu.utils.Date.now"
 				resultName="resultc623932e56a7498d97eb57ca0de05905"
 				temporaryMapping="true"
-				x="72"
-				y="177"
+				x="69"
+				y="495"
 				invocationOrder="0"
-				asynchronous="false">
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
-				id="95e96cdd-cb02-4f62-a65e-0eb8c2eb2553"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>resultc623932e56a7498d97eb57ca0de05905/date</from>
-			<to>now</to>
+				asynchronous="false"
+				recache="false">
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			description="=&quot;Invalid authentication, it may have expired or reached it max usage amount: &quot; + input/id"
 			disabled="false"
 			id="d5475304-a141-42eb-a160-c234d77afbfa"
 			label="!temporary"
 			code="TEMPORARY-INVALID"
 			message="Invalid temporary authentication" xsi:nil="true"/>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
-			disabled="false"
-			id="11a75c3d-876d-4bbf-9fa3-b037a569f3cb"
-			label="temporary/maxUses != null &amp;&amp; temporary/used &gt;= temporary/maxUses"
-			code="TEMPORARY-USED"
-			message="Max amount of uses reached for this temporary login" xsi:nil="true"/>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
-			disabled="false"
-			id="320ba657-41b0-4d90-a79a-32913e6a380e"
-			label="temporary/until != null &amp;&amp; temporary/until &gt;= now"
-			code="TEMPORARY-EXPIRED"
-			message="This temporary login has expired" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			comment="Update &amp; set ok"
+			comment="Check that you have the correct secret"
 			disabled="false"
-			id="ac16b8b6-f9c8-41b6-bd29-7ce539251d21">
+			id="30f5cd80-cb6f-4896-8213-4d98dac0dee1">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="90ac252a-5882-45d5-a845-e4083118a61b"
+				serviceId="nabu.cms.core.utils.security.password.validate"
+				resultName="resulte9afddf4b9894c7792242420b3376f7e"
+				temporaryMapping="true"
+				x="93"
+				y="186"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="dcf44a5c-c133-4998-ad02-7b0058f92169"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/secret</from>
+				<to>password</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="add0bddf-f807-47ab-8513-b8d5cf6b9034"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/id</from>
+				<to>salt</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c7340696-b5f5-4337-8769-df2251c9cd86"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>temporary/secret</from>
+				<to>hash</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="73a29f6f-1946-4998-b58a-737aca9dbb56"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>BCRYPT</from>
+				<to>algorithm</to>
+			</steps>
+		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
-				id="0780d170-1763-4dc3-92ee-a5c97c37b65c"
+				id="a9092b93-db55-4dbd-aa7d-fb99cbbc0d8b"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resulte9afddf4b9894c7792242420b3376f7e/valid</from>
+			<to>valid</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			description="=&quot;Invalid secret for authentication: &quot; + temporary/id"
+			disabled="false"
+			id="bc521288-3915-4c15-b5c6-fd682bfab2f3"
+			label="!valid"
+			code="TEMPORARY-INVALID"
+			message="Invalid secret"
+			alias="=temporary/alias"
+			realm="=temporary/realm" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Update the used"
+			disabled="false"
+			id="2ed55019-ceb1-4b5a-a39d-257d2cedd6a3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="a42cbbb5-3570-4371-b603-2cb0211834cd"
 				mask="false"
 				optional="false"
 				fixedValue="true">
 			<from>=temporary/used + 1</from>
 			<to>temporary/used</to>
 		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Update &amp; set ok"
+			disabled="false"
+			id="ac16b8b6-f9c8-41b6-bd29-7ce539251d21">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="9ef6aba4-7343-4338-9f38-245c6398f369"
 				serviceId="nabu.services.jdbc.Services.update"
 				resultName="result82c28b0ef8a441e296b10b3eae379005"
 				temporaryMapping="true"
-				x="319"
-				y="87"
+				x="96"
+				y="26"
 				invocationOrder="0"
-				asynchronous="false">
+				asynchronous="false"
+				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="42e19409-9d1a-42ee-b005-1c8a9e363af3"
@@ -169,6 +237,15 @@
 				fixedValue="false">
 			<from>temporary/realm</from>
 			<to>output/realm</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d36541df-d890-4608-bc9f-b925ea9a6d76"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>temporary/authenticationId</from>
+			<to>output/authenticationId</to>
 		</steps>
 	</steps>
 </sequence>

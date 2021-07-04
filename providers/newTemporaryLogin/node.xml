@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:41.562+01:00" lastModified="2021-02-06T13:01:22.045+01:00" leaf="true" version="26">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.cms.core.utils.security.password.hash</references>
+    <references>java.util.Date</references>
+    <references>nabu.utils.Server.uuid</references>
+    <references>nabu.utils.Date.now</references>
+    <references>be.nabu.eai.module.web.application.api.TemporaryAuthenticationGenerator.generate</references>
+    <references>nabu.authentication.temporary.providers.configuration</references>
+    <references>nabu.utils.Server.password</references>
+    <references>java.lang.Integer</references>
+    <references>nabu.services.jdbc.Services.insert</references>
+    <references>be.nabu.eai.module.web.application.api.TemporaryAuthentication</references>
+    <references>nabu.misc.configuration.Services.configurations</references>
+    <references>java.lang.String</references>
+    <references>nabu.authentication.temporary.types.database.temporaryAuthentication</references>
+</node>

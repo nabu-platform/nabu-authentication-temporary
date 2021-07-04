@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2020-01-06T16:20:02.615+01:00" lastModified="2020-01-09T14:26:11.069+01:00" leaf="true" version="8"><environmentId>apollo</environmentId><hidden>false</hidden><properties/><references>java.util.UUID</references><references>java.lang.String</references><references>java.lang.Long</references><references>java.util.Date</references></node>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2020-01-06T16:20:02.615+01:00" lastModified="2021-02-06T13:01:13.827+01:00" leaf="true" version="14">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.util.UUID</references>
+    <references>java.lang.String</references>
+    <references>java.lang.Long</references>
+    <references>java.util.Date</references>
+</node>

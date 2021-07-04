@@ -1,6 +1,7 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="77bae791-300e-4bbc-bcef-b38d180b4c77">
+		id="77bae791-300e-4bbc-bcef-b38d180b4c77"
+		transactionVariable="transactionId">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="78dfaed1-8bc4-414f-a9e2-e6d376479e5b">
@@ -13,25 +14,8 @@
 				x="30"
 				y="30"
 				invocationOrder="0"
-				asynchronous="false">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="4d1bb00c-01e3-4a93-9fa3-b9575e6f3be6"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>input/alias</from>
-				<to>id</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="6bd3e88e-453b-41c7-b464-b7d8483aa6c5"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>input/secret</from>
-				<to>secret</to>
-			</steps>
+				asynchronous="false"
+				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="31bbcc0f-bf6f-4ce6-be00-90d330388523"
@@ -40,6 +24,33 @@
 					fixedValue="false">
 				<from>input/configuration/connectionId</from>
 				<to>connectionId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b61e8faf-8d97-4f30-8f33-2b41c12a7a0b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/authentication/id</from>
+				<to>id</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e6fbc399-2056-46cf-898a-852cf24dedaf"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/authentication/secret</from>
+				<to>secret</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="13f41c2a-19b8-46ce-be52-d639b3f849ea"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/type</from>
+				<to>type</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -59,6 +70,15 @@
 				fixedValue="false">
 			<from>result8bceb5d9188b4851bbddb41f1b4ef96a/realm</from>
 			<to>output/token/realm</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="8365a045-a034-4902-9caa-14954206b75a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result8bceb5d9188b4851bbddb41f1b4ef96a/authenticationId</from>
+			<to>output/token/authenticationId</to>
 		</steps>
 	</steps>
 </sequence>

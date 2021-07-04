@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataModel>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.authentication.temporary.types.database.temporaryAuthentication</type>
+        <x>277</x>
+        <y>212</y>
+    </entries>
+</dataModel>

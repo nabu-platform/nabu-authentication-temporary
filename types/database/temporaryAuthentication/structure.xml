@@ -10,4 +10,6 @@
     <field name="type" type="java.lang.String"/>
     <field minOccurs="0" name="correlationId" type="java.lang.String"/>
     <field minOccurs="0" name="authenticationId" type="java.lang.String"/>
+    <field minOccurs="0" name="algorithm" type="java.lang.String"/>
+    <field comment="You can revoke a temporary authentication" minOccurs="0" name="revoked" type="java.lang.Boolean"/>
 </structure>

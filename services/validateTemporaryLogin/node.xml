@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:48.726+01:00" lastModified="2021-02-06T13:01:43.118+01:00" leaf="true" version="36">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:48.726+01:00" lastModified="2021-09-13T10:22:51.610+02:00" leaf="true" version="52">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
+    <references>nabu.authentication.temporary.database.select</references>
     <references>nabu.services.jdbc.Services.update</references>
     <references>nabu.authentication.temporary.database.selectForUpdate</references>
+    <references>java.util.Date</references>
     <references>nabu.utils.Date.now</references>
     <references>java.lang.Boolean</references>
     <references>java.lang.String</references>

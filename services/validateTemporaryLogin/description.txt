@@ -1,0 +1,1 @@
+We assume that if you set a max use, you are using it for something like 2FA. In that case you want to keep detailed track of the counts (hence database locking).

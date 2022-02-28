@@ -12,4 +12,5 @@
     </structure>
     <structure collectionName="temporaryAuthentications" definition="nabu.authentication.temporary.types.database.temporaryAuthentication" minOccurs="0" name="temporary"/>
     <field name="valid" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="now" type="java.util.Date"/>
 </structure>

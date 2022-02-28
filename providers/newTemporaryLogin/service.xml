@@ -1,6 +1,40 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
 		id="99b9bd5e-51b7-4a74-ae3c-7e687a885ec5">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="d6fd6046-391f-4362-a89e-5800befa5852"
+			query="input/maxUses">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="If we have no max use limit, we assume it is for something high performant (like api keys). We use a fast hashing algorithm."
+				disabled="false"
+				id="4d7d110e-03e5-4513-a8f8-fe3d368e9c02"
+				label="null">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c9a5ba8c-3f7a-4f79-a4d5-4138f1aebb04"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>SHA256</from>
+				<to>algorithm</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Otherwise we assume it is for low performant items and use BCRYPT"
+				disabled="false"
+				id="4c7cc354-8366-4798-b52e-d9763308b154">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cfc823c0-91f4-4fba-b2fd-2ede22860bbc"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>BCRYPT</from>
+				<to>algorithm</to>
+			</steps>
+		</steps>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get config"
 			disabled="false"
@@ -212,6 +246,15 @@
 			<from>input/authenticationId</from>
 			<to>temporary/authenticationId</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="4e5ddaa2-b21a-43d7-93a0-19a35947bcb3"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>algorithm</from>
+			<to>temporary/algorithm</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Generate hash from user submitted password &amp; update verification code"
@@ -230,15 +273,6 @@
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="5c5ca436-4227-4428-9271-f88b99550a75"
-					mask="false"
-					optional="false"
-					fixedValue="true">
-				<from>BCRYPT</from>
-				<to>algorithm</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
 					id="e1568f59-5f86-407f-9e5c-95ecce18ab78"
 					mask="false"
 					optional="false"
@@ -254,6 +288,15 @@
 					fixedValue="false">
 				<from>output/response/secret</from>
 				<to>password</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e041e77f-00db-4949-a83c-1973681b2745"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>algorithm</from>
+				<to>algorithm</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"

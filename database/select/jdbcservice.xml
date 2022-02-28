@@ -1,0 +1,10 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.authentication.temporary.types.database.temporaryAuthentication</outputDefinition>
+	<sql>select *
+from ~temporary_authentications ta
+where id = :id
+	and (ta.max_uses is null or ta.used &lt; ta.max_uses)
+	and (ta.until is null or ta.until &gt;= :now)
+	and ta.type = :type
+order by created desc</sql>
+</jdbcService>

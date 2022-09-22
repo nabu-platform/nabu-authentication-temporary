@@ -1,15 +1,18 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="99b9bd5e-51b7-4a74-ae3c-7e687a885ec5">
+		id="99b9bd5e-51b7-4a74-ae3c-7e687a885ec5"
+		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
-			disabled="false"
+			disabled="true"
 			id="d6fd6046-391f-4362-a89e-5800befa5852"
+			lineNumber="2"
 			query="input/maxUses">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="If we have no max use limit, we assume it is for something high performant (like api keys). We use a fast hashing algorithm."
 				disabled="false"
 				id="4d7d110e-03e5-4513-a8f8-fe3d368e9c02"
-				label="null">
+				label="null"
+				lineNumber="3">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="c9a5ba8c-3f7a-4f79-a4d5-4138f1aebb04"
@@ -23,7 +26,8 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				comment="Otherwise we assume it is for low performant items and use BCRYPT"
 				disabled="false"
-				id="4c7cc354-8366-4798-b52e-d9763308b154">
+				id="4c7cc354-8366-4798-b52e-d9763308b154"
+				lineNumber="4">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="cfc823c0-91f4-4fba-b2fd-2ede22860bbc"
@@ -36,10 +40,26 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="We always use a fast algorithm. Use rate limiting to block unwanted behavior."
+			disabled="false"
+			id="deec9780-bd1f-4103-9e83-568d1c1cda5e"
+			lineNumber="5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="f8e1ce29-ed8a-43e7-aa84-5084e1e7b3d8"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>SHA256</from>
+			<to>algorithm</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get config"
 			disabled="false"
 			id="ec11e431-bc29-4ed4-a209-7f98c5516a61"
-			label="!input/configuration">
+			label="!input/configuration"
+			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="e2c42d29-a23a-49d0-87a8-390b2d650c44"
@@ -74,7 +94,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Map the login"
 			disabled="false"
-			id="34e1456b-2fd6-4276-9f8b-380ecf65efc5">
+			id="34e1456b-2fd6-4276-9f8b-380ecf65efc5"
+			lineNumber="7">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="4e071f25-6c5e-4ad9-a634-99b5314e0304"
@@ -255,11 +276,30 @@
 			<from>algorithm</from>
 			<to>temporary/algorithm</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="a885db9e-7d2c-43bf-a5ae-85848e5b72cf"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/timeout</from>
+			<to>temporary/timeout</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="03151336-090c-4947-a8dd-d3084f1dbbd9"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/device/deviceId</from>
+			<to>temporary/deviceId</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Generate hash from user submitted password &amp; update verification code"
 			disabled="false"
-			id="a4f16629a79b403fb0a5263a03d58029">
+			id="a4f16629a79b403fb0a5263a03d58029"
+			lineNumber="8">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="67079531-c801-4766-a4d5-960f9fe09095"
@@ -312,7 +352,8 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Insert into database"
 			disabled="false"
-			id="b1b76780-8346-4c69-95da-8c1039c206d2">
+			id="b1b76780-8346-4c69-95da-8c1039c206d2"
+			lineNumber="9">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="d87abb45-6eec-4712-a2c4-1f9e36c85526"

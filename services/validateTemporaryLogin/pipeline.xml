@@ -4,6 +4,8 @@
         <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
         <field name="secret" type="java.lang.String"/>
         <field name="type" type="java.lang.String"/>
+        <field minOccurs="0" name="deviceId" type="java.lang.String"/>
+        <field minOccurs="0" name="correlationId" type="java.lang.String"/>
     </structure>
     <structure name="output">
         <field name="alias" type="java.lang.String"/>
@@ -13,4 +15,6 @@
     <structure collectionName="temporaryAuthentications" definition="nabu.authentication.temporary.types.database.temporaryAuthentication" minOccurs="0" name="temporary"/>
     <field name="valid" type="java.lang.Boolean"/>
     <field minOccurs="0" name="now" type="java.util.Date"/>
+    <field comment="Keep track if we updated the temporary authentication (e.g. use counter etc)" name="updated" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="timedOut" type="java.util.Date"/>
 </structure>

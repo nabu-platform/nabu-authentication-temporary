@@ -1,10 +1,12 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
 		id="77bae791-300e-4bbc-bcef-b38d180b4c77"
+		lineNumber="1"
 		transactionVariable="transactionId">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="78dfaed1-8bc4-414f-a9e2-e6d376479e5b">
+			id="78dfaed1-8bc4-414f-a9e2-e6d376479e5b"
+			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="3df2bd54-5701-425f-8a7f-613fb3874a0f"
@@ -51,6 +53,24 @@
 					fixedValue="false">
 				<from>input/type</from>
 				<to>type</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b884af6e-ba68-499a-8f1a-8ae42fffeee2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/device/deviceId</from>
+				<to>deviceId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="91ed9c6b-3789-47ce-9be4-0ec74ca63dba"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/correlationId</from>
+				<to>correlationId</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"

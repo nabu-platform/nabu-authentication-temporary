@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:41.562+01:00" lastModified="2021-09-13T09:35:31.580+02:00" leaf="true" version="28">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:41.562+01:00" lastModified="2022-09-22T17:32:44.630+02:00" leaf="true" version="36">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
@@ -10,9 +10,11 @@
     <references>nabu.utils.Date.now</references>
     <references>be.nabu.eai.module.web.application.api.TemporaryAuthenticationGenerator.generate</references>
     <references>nabu.authentication.temporary.providers.configuration</references>
+    <references>be.nabu.libs.authentication.api.Device</references>
     <references>nabu.utils.Server.password</references>
     <references>java.lang.Integer</references>
     <references>nabu.services.jdbc.Services.insert</references>
+    <references>be.nabu.libs.types.base.Duration</references>
     <references>be.nabu.eai.module.web.application.api.TemporaryAuthentication</references>
     <references>nabu.misc.configuration.Services.configurations</references>
     <references>java.lang.String</references>

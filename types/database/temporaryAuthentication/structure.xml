@@ -12,4 +12,7 @@
     <field minOccurs="0" name="authenticationId" type="java.lang.String"/>
     <field minOccurs="0" name="algorithm" type="java.lang.String"/>
     <field comment="You can revoke a temporary authentication" minOccurs="0" name="revoked" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="timeout" type="be.nabu.libs.types.base.Duration"/>
+    <field minOccurs="0" name="lastUsed" timezone="UTC" type="java.util.Date"/>
+    <field minOccurs="0" name="deviceId" type="java.lang.String"/>
 </structure>

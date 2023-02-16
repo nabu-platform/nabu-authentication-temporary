@@ -294,6 +294,72 @@
 			<from>input/device/deviceId</from>
 			<to>temporary/deviceId</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="c91d7a60-d9c9-4e05-8e7b-1dd03eff44e7"
+				serviceId="nabu.utils.Runtime.getCurrentToken"
+				resultName="resultb1d7d66795544631aa5b633aaac74844"
+				temporaryMapping="true"
+				x="107"
+				y="444"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="3f39207f-50e7-4734-b342-a08fbf926b18"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/secret</from>
+			<to>temporary/secret</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="59f47efb-5c8f-49da-956a-f6737987d6ab"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/impersonatorId</from>
+			<to>temporary/impersonatorId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e61ddc00-bbde-43f8-a452-13c2661f0798"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/tokenId</from>
+			<to>temporary/tokenId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="7289f2f9-d60b-4199-83a8-b0f103529d20"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/authenticator</from>
+			<to>temporary/authenticator</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="dca71e08-3147-4206-a639-c82cfeef9e16"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/impersonatorRealm</from>
+			<to>temporary/impersonatorRealm</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="39f269e1-f394-4d38-8aa4-ba0d8072097d"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/impersonator</from>
+			<to>temporary/impersonator</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Generate hash from user submitted password &amp; update verification code"

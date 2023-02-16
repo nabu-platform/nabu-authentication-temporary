@@ -514,5 +514,59 @@
 			<from>temporary/authenticationId</from>
 			<to>output/authenticationId</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="379fbfff-7ae4-43c2-90e4-5db024f8c544"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>temporary/authenticator</from>
+			<to>output/authenticator</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="c589d3bc-26ae-4132-ab7f-ef9267e6cc88"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>temporary/tokenId</from>
+			<to>output/tokenId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="74b659e8-bd33-42e9-a0dc-26f4f2375d34"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>temporary/id</from>
+			<to>output/temporaryAuhenticationId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="f1b5cbaa-e92a-4c00-ac24-1a3add181ce9"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>temporary/impersonator</from>
+			<to>output/impersonator</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="6c5ef95f-7724-4d0d-b940-bd776777d044"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>temporary/impersonatorId</from>
+			<to>output/impersonatorId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="78b52e53-a670-4e60-b80d-9c5a1589b4b2"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>temporary/impersonatorRealm</from>
+			<to>output/impersonatorRealm</to>
+		</steps>
 	</steps>
 </sequence>

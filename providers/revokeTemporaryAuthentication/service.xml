@@ -1,0 +1,74 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="d7a89e0c7bb342338ba6cbab852a7275"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="74c557565ab4442c9aca95a71a79fb73"
+			label="input/tokenId != null"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="It's a uuid"
+				disabled="false"
+				id="878e76a53849466fb47e603caf7e78f4"
+				label="input/tokenId ~ &quot;^[0-9a-f]{32}$&quot;"
+				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="c2817569610a48ea90c668480a9d7e79"
+					serviceId="nabu.authentication.temporary.database.revokeToken"
+					resultName="result7e313d58510a47c5b02f160e240de3e8"
+					temporaryMapping="true"
+					x="153"
+					y="45"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="89d637e2b3584e1eb2aad06e811740a2"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/tokenId</from>
+					<to>parameters[0]/tokenId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a7698a85c26d477b88be0d1d1dafad5c"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/tokenId</from>
+					<to>parameters[0]/id</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="1beb030b4fbd404b82462a48b5ce5833"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="4322976d1906405fb2495f531e0f6f4b"
+					serviceId="nabu.authentication.temporary.database.revokeToken"
+					resultName="resultb8f7b7507b4b449ea98998c670772cd4"
+					temporaryMapping="true"
+					x="215"
+					y="49"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="1dbdb8164fc24b23bded3987bc9b63d1"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/tokenId</from>
+					<to>parameters[0]/tokenId</to>
+				</steps>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

@@ -3,3 +3,5 @@ The argument is that BCRYPT is useful for protecting user-chosen passwords becau
 However, the temporary authentications generate ad hoc secrets that are generally severely limited in use. Speed is -at that point- more important.
 
 If at some point our database gets hacked, we can easily reset all the temporary authentications without major issues.
+
+By storing the creator credentials, we can detect for instance users that impersonate other users.

@@ -15,4 +15,9 @@
     <field minOccurs="0" name="timeout" type="be.nabu.libs.types.base.Duration"/>
     <field minOccurs="0" name="lastUsed" timezone="UTC" type="java.util.Date"/>
     <field minOccurs="0" name="deviceId" type="java.lang.String"/>
+    <field minOccurs="0" name="impersonator" type="java.lang.String"/>
+    <field comment="If you already had an identity while you created this authentication, let's store it" minOccurs="0" name="impersonatorId" type="java.lang.String"/>
+    <field minOccurs="0" name="impersonatorRealm" type="java.lang.String"/>
+    <field minOccurs="0" name="authenticator" type="java.lang.String"/>
+    <field minOccurs="0" name="tokenId" type="java.lang.String"/>
 </structure>

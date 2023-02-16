@@ -1,0 +1,5 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sql>update ~temporary_authentications
+set revoked = true
+where (:id is not null and id = :id) or (:tokenId is not null and token_id = :tokenId)</sql>
+</jdbcService>

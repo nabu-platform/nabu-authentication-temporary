@@ -11,6 +11,12 @@
         <field name="alias" type="java.lang.String"/>
         <field name="realm" type="java.lang.String"/>
         <field minOccurs="0" name="authenticationId" type="java.lang.String"/>
+        <field minOccurs="0" name="authenticator" type="java.lang.String"/>
+        <field minOccurs="0" name="tokenId" type="java.lang.String"/>
+        <field name="temporaryAuhenticationId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+        <field minOccurs="0" name="impersonator" type="java.lang.String"/>
+        <field minOccurs="0" name="impersonatorId" type="java.lang.String"/>
+        <field minOccurs="0" name="impersonatorRealm" type="java.lang.String"/>
     </structure>
     <structure collectionName="temporaryAuthentications" definition="nabu.authentication.temporary.types.database.temporaryAuthentication" minOccurs="0" name="temporary"/>
     <field name="valid" type="java.lang.Boolean"/>

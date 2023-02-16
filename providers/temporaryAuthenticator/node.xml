@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:59.319+01:00" lastModified="2022-09-22T16:53:25.234+02:00" leaf="true" version="16">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:59.319+01:00" lastModified="2022-11-08T16:50:01.340+01:00" leaf="true" version="19">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
@@ -8,6 +8,7 @@
     <references>be.nabu.eai.module.web.application.api.TemporaryAuthenticator.authenticate</references>
     <references>nabu.authentication.temporary.providers.configuration</references>
     <references>java.lang.String</references>
+    <references>java.util.UUID</references>
     <references>be.nabu.libs.authentication.api.Device</references>
     <references>be.nabu.libs.authentication.api.Token</references>
 </node>

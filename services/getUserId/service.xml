@@ -1,0 +1,40 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="93f819aecccd4d818ad1e0bf310b0837"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="ec47cf98c2c543ea919571eb93268a70"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="804eff324811421581eadd71989f2deb"
+				serviceId="nabu.authentication.temporary.crud.temporaryAuthentication.services.get"
+				resultName="resultd3181863b4c24c84ab157af4782810a9"
+				temporaryMapping="true"
+				x="30"
+				y="30"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1ab6fc718b83402f801859f417d9fed9"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/temporaryAuthenticationId</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="6a7c67e47472476996d613b21e259e28"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultd3181863b4c24c84ab157af4782810a9/result/authenticationId</from>
+			<to>output/userAuthenticationId</to>
+		</steps>
+	</steps>
+</sequence>

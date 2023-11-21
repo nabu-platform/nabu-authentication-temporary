@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:48.726+01:00" lastModified="2022-11-08T16:49:53.422+01:00" leaf="true" version="71">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:48.726+01:00" lastModified="2023-05-26T12:30:09.278+02:00" leaf="true" version="78">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.authentication.temporary.database.select</references>
-    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.authentication.temporary.crud.temporaryAuthenticationLog.services.create</references>
     <references>nabu.authentication.temporary.database.selectForUpdate</references>
     <references>java.util.Date</references>
     <references>nabu.utils.Date.now</references>
+    <references>java.util.UUID</references>
+    <references>nabu.services.jdbc.Services.update</references>
+    <references>nabu.utils.Runtime.getCorrelationId</references>
     <references>java.lang.Boolean</references>
     <references>java.lang.String</references>
-    <references>java.util.UUID</references>
     <references>nabu.utils.Date.incrementDuration</references>
     <references>nabu.authentication.temporary.types.database.temporaryAuthentication</references>
     <references>nabu.cms.core.utils.security.password.validate</references>

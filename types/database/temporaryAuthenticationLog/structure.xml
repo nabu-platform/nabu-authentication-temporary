@@ -1,0 +1,9 @@
+<structure collectionName="temporaryAuthenticationLogs" name="temporaryAuthenticationLog">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field foreignKey="nabu.authentication.temporary.types.database.temporaryAuthentication:id" name="temporaryAuthenticationId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field name="created" timezone="UTC" type="java.util.Date"/>
+    <field comment="SUCCEEDED, FAILED" name="status" type="java.lang.String"/>
+    <field minOccurs="0" name="deviceId" type="java.lang.String"/>
+    <field comment="We can add a comment" minOccurs="0" name="comment" type="java.lang.String"/>
+    <field minOccurs="0" name="correlationId" type="java.lang.String"/>
+</structure>

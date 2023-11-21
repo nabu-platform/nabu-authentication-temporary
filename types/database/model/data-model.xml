@@ -3,7 +3,18 @@
     <entries>
         <synchronize>true</synchronize>
         <type>nabu.authentication.temporary.types.database.temporaryAuthentication</type>
-        <x>277</x>
-        <y>212</y>
+        <x>398</x>
+        <y>60</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <x>505</x>
+        <y>124</y>
+    </entries>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.authentication.temporary.types.database.temporaryAuthenticationLog</type>
+        <x>939</x>
+        <y>135</y>
     </entries>
 </dataModel>

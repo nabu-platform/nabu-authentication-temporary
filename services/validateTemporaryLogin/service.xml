@@ -569,4 +569,182 @@
 			<to>output/impersonatorRealm</to>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="4581d52443b54a09918b822e11a38496"
+			lineNumber="21">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="53c1e8d80877487f82c2be94c96ca0ed"
+				serviceId="nabu.authentication.temporary.crud.temporaryAuthenticationLog.services.create"
+				resultName="result97a31e16b2584e1f8f2db17a2b1a7dd6"
+				temporaryMapping="true"
+				x="422"
+				y="130"
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="655c6e5da1e142a49210138cfb507cf0"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>temporary/id</from>
+				<to>instance/temporaryAuthenticationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c068a688f7214790902746e4229aaa24"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>SUCCEEDED</from>
+				<to>instance/status</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="892ab2417551443fa736307e2e9d49fd"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/deviceId</from>
+				<to>instance/deviceId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f63a6ab0d8fe4d518c68734b268c6046"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultf5f3f3d2e0b24e53873afaf138bb093d/correlationId</from>
+				<to>instance/correlationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f82b321b155445e6bbd2f3609e431a6a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>transactionId</from>
+				<to>transactionId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f5048e154c124daca1748f19f2be88a3"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/connectionId</from>
+				<to>connectionId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="6b9f5181c3af42edbf1b7dcd5db50f20"
+				serviceId="nabu.utils.Runtime.getCorrelationId"
+				resultName="resultf5f3f3d2e0b24e53873afaf138bb093d"
+				temporaryMapping="true"
+				x="43"
+				y="362"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Catch"
+			disabled="false"
+			id="439869bef040482bb1219aac903d1b9e"
+			lineNumber="22"
+			variable="exception">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="9e48fddd96ee4a739abff0378bb46638"
+				label="temporary"
+				lineNumber="23">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="4cbd366da38945ee86120307f944e266"
+					serviceId="nabu.authentication.temporary.crud.temporaryAuthenticationLog.services.create"
+					resultName="result97a31e16b2584e1f8f2db17a2b1a7dd6"
+					temporaryMapping="true"
+					x="422"
+					y="130"
+					invocationOrder="1"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="3c085ff9bd80469fb06778eb1b2d4e0e"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>temporary/id</from>
+					<to>instance/temporaryAuthenticationId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="1cc3ab6e143049f7816efd0b0f9a4dd1"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>FAILED</from>
+					<to>instance/status</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="2b8613258b794653a9e8133c7a4c3485"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/deviceId</from>
+					<to>instance/deviceId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="42a60ccf46c64c0abb961d1ffa2b8eba"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resultf5f3f3d2e0b24e53873afaf138bb093d/correlationId</from>
+					<to>instance/correlationId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d849e880996049c398cadf94924356f2"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/connectionId</from>
+					<to>connectionId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="3e57ad975e59402ebca4d7de6cee1cd0"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>transactionId</from>
+					<to>transactionId</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="58529cfc6d45408d88a36d1161ed6a71"
+					serviceId="nabu.utils.Runtime.getCorrelationId"
+					resultName="resultf5f3f3d2e0b24e53873afaf138bb093d"
+					temporaryMapping="true"
+					x="43"
+					y="362"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+				disabled="false"
+				id="182fd22e560d4094b7e7ec26b66ac4e4"
+				lineNumber="24"
+				message="=exception" xsi:nil="true"/>
+	</steps>
 </sequence>

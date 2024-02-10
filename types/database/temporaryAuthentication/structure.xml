@@ -6,6 +6,7 @@
     <field comment="Max amount of times this code can be used (this is best effort)" minOccurs="0" name="maxUses" type="java.lang.Long"/>
     <field comment="How many times it has already been used" name="used" type="java.lang.Long"/>
     <field comment="When this authentication was created." name="created" timezone="UTC" type="java.util.Date"/>
+    <field comment="From when can this code be used? If not filled it is is currently active." minOccurs="0" name="since" timezone="UTC" type="java.util.Date"/>
     <field comment="Until when this code can be used" minOccurs="0" name="until" timezone="UTC" type="java.util.Date"/>
     <field name="type" type="java.lang.String"/>
     <field minOccurs="0" name="correlationId" type="java.lang.String"/>

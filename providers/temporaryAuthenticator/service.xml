@@ -125,7 +125,7 @@
 				optional="false"
 				fixedValue="false">
 			<from>result8bceb5d9188b4851bbddb41f1b4ef96a/temporaryAuhenticationId</from>
-			<to>temporaryAuhenticationId</to>
+			<to>temporaryAuthenticationId</to>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -181,7 +181,7 @@
 				mask="false"
 				optional="false"
 				fixedValue="false">
-			<from>temporaryAuhenticationId</from>
+			<from>temporaryAuthenticationId</from>
 			<to>output/token/tokenId</to>
 		</steps>
 	</steps>

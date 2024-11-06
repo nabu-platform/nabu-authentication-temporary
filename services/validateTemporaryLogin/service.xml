@@ -132,7 +132,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			disabled="false"
 			id="f172ec729d144b88bf62edd714ff52dc"
-			label="temporary/from != null &amp;&amp; temporary/from &gt; now"
+			label="temporary/since != null &amp;&amp; temporary/since &gt; now"
 			lineNumber="7"
 			code="401"
 			message="The token is not valid yet"

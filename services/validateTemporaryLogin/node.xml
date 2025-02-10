@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:48.726+01:00" lastModified="2024-09-19T09:03:14.154+02:00" leaf="true" version="81">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2020-01-06T16:29:48.726+01:00" lastModified="2025-02-05T12:06:31.373+01:00" leaf="true" version="94">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
@@ -14,6 +14,7 @@
     <references>nabu.utils.Runtime.getCorrelationId</references>
     <references>java.lang.Boolean</references>
     <references>java.lang.String</references>
+    <references>nabu.authentication.temporary.crud.temporaryAuthentication.services.get</references>
     <references>nabu.utils.Date.incrementDuration</references>
     <references>nabu.authentication.temporary.types.database.temporaryAuthentication</references>
     <references>nabu.cms.core.utils.security.password.validate</references>

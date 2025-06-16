@@ -1,5 +1,15 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<sql>update ~temporary_authentications
 set revoked = true
-where (:id is not null and id = :id) or (:tokenId is not null and token_id = :tokenId)</sql>
+where ((:id is null and :tokenId is null) or (:id is not null and id = any(:id)) or (:tokenId is not null and token_id = any(:tokenId)))
+	and (:notId is null or id &lt;&gt; all(:notId))
+	and (:notTokenId is null or token_id &lt;&gt; all(:notTokenId))
+	and (:deviceId is null or device_id = any(:deviceId))
+	and (:notDeviceId is null or device_id &lt;&gt; all(:notDeviceId))
+	and (:authenticationId is null or authentication_id = any(:authenticationId))
+	and (:notAuthenticationId is null or authentication_id &lt;&gt; all(:notAuthenticationId))
+	-- make sure it is still valid
+	and (max_uses is null or used &lt; max_uses)
+	and (until is null or until &gt;= :now)
+	and (revoked is null or revoked = false)</sql>
 </jdbcService>

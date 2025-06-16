@@ -1,4 +1,6 @@
 <structure interface="be.nabu.eai.module.web.application.api.TemporaryAuthenticationRevoker.revoke" name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="idsToRevoke" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="idsToNotRevoke" type="java.lang.String"/>
 </structure>

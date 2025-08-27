@@ -11,8 +11,36 @@
 	</parent>
 	<dependencies>
 		<dependency>
-			<groupId>nabu.web</groupId>
-			<artifactId>application</artifactId>
+			<groupId>nabu.services</groupId>
+			<artifactId>crud</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.services</groupId>
+			<artifactId>jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.types</groupId>
+			<artifactId>model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.types</groupId>
+			<artifactId>structure</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.services</groupId>
+			<artifactId>vm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu</groupId>
+			<artifactId>utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.cms</groupId>
+			<artifactId>core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.protocols.jdbc</groupId>
+			<artifactId>pool</artifactId>
 		</dependency>
 	</dependencies>
 </project>
